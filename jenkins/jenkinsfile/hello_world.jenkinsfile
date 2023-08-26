@@ -7,7 +7,7 @@ pipeline {
                 echo 'Hello World'
             }
         }
-    }
+    
 
 stage('SonarQube analysis') {
             steps {
@@ -16,4 +16,6 @@ stage('SonarQube analysis') {
                 }
             }
         }
+}
+
 }

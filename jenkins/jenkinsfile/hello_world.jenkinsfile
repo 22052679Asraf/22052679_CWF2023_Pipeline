@@ -9,12 +9,18 @@ pipeline {
 
 }
         
-         stage("build & SonarQube analysis") {
+         stage('SonarQube Analysis') {
             steps {
-              withSonarQubeEnv('qube')
+                script {
+                    def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    def scannerCmd = "${scannerHome}\\bin\\sonar-scanner.bat"
+                    bat "\"${scannerCmd}\" -Dsonar.projectKey=my-project-key -Dsonar.sources=./src"
+                }
+            }
+        }
 
 }
     }
-}
 
-}
+
+

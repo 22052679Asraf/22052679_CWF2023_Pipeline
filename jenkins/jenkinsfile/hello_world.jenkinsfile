@@ -1,21 +1,12 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                // Get code from a GitHub repository
+                git url: 'https://github.com/22052679Asraf/22052679_CWF2023_Pipeline.git/', branch: 'main',
+                
             }
         }
-    
-
- stage('SonarQube analysis') {
-       // requires SonarQube Scanner 2.8+
-       def scannerHome = tool 'SONAR_RUNNER';
-       withSonarQubeEnv('sonarqube') {
-            bat "\"${scannerHome}\\bin\\sonar-scanner.bat\""
-       }
-}
-}
-
+    }
 }

@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get code from a GitHub repository
-                git url: 'https://github.com/22052679Asraf/22052679_CWF2023_Pipeline.git/', branch: 'main',
+                git url: 'https://github.com/22052679Asraf/22052679_CWF2023_Pipeline.git/', branch: 'main'
                 
             }
         }

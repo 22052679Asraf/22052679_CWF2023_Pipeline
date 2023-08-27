@@ -14,7 +14,7 @@ pipeline {
                 script {
                     def scannerHome = tool name: 'qube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     def scannerCmd = "${scannerHome}\\bin\\sonar-scanner.bat"
-                    bat "\"${scannerCmd}\" -Dsonar.projectKey=my-project-key -Dsonar.sources=./src"
+                    bat "\"${scannerCmd}\" -Dsonar.projectKey=Asraf_Sonar_Project -Dsonar.sources=./src"
                 }
             }
         }

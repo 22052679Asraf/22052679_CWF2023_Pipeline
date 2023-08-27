@@ -12,7 +12,7 @@ pipeline {
          stage('SonarQube Analysis') {
             steps {
                 script {
-                    def scannerHome = tool name: 'server_sonar', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    def scannerHome = tool name: 'qube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     def scannerCmd = "${scannerHome}\\bin\\sonar-scanner.bat"
                     bat "\"${scannerCmd}\" -Dsonar.projectKey=my-project-key -Dsonar.sources=./src"
                 }

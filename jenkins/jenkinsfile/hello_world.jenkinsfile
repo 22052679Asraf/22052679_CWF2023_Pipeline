@@ -6,8 +6,10 @@ pipeline {
                 git url: 'https://github.com/22052679Asraf/22052679_CWF2023_Pipeline.git/', branch: 'main'
                 
             }
-        
 
+}
+        
+         stage("build & SonarQube analysis") {
             steps {
               withSonarQubeEnv('My SonarQube Server')
 
